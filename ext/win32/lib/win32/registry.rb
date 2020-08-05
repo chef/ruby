@@ -251,7 +251,7 @@ For detail, see the MSDN[http://msdn.microsoft.com/library/en-us/sysinfo/base/pr
       end
 
       def win64?
-        /^(?:x64|x86_64)/ =~ RUBY_PLATFORM
+        @win64 ||= /^(?:x64|x86_64)/.match?(RUBY_PLATFORM)
       end
 
       def packhandle(h)

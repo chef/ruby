@@ -12,8 +12,7 @@ module Win32
     Error = Registry::Error
 
     def self.get_hosts_path
-      path = get_hosts_dir
-      path = File.expand_path('hosts', path)
+      path = File.expand_path('hosts', get_hosts_dir)
       File.exist?(path) ? path : nil
     end
 
